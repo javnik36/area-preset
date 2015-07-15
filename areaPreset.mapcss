@@ -1,0 +1,57 @@
+meta {
+    title: "area:highway style";   /* title shown in the menu */
+    icon: "images/logo.png";  /* small icon shown in the menu next to the title */
+    version: "1.0";           /* the version of the style */
+    description: "...";       /* one or two sentences of describing the style */
+    author: "Javnik";            /* the author(s) of the style */
+    /*link: "http://...";*/       /* URL to the web page of the style */
+    ?min-josm-version: 6789;   /* the minimum JOSM version where this style works */
+}
+
+area|z17-[area:highway=yes], area|z17-[!highway="~/.way/"]{
+    fill-color: #111219;
+    fill-opacity: 0.2;
+    width: 2;
+}
+
+area|z17-[area:highway:crossing]{
+    fill-color: #182971;
+    fill-opacity: 0.2;
+    width: 2;
+}
+
+area|z17-[area:highway:prohibited]{
+    fill-color: #A62B11;
+    fill-opacity: 0.2;
+    width: 1.5;
+}
+
+area|z17-[area:highway:permissive]{
+    fill-color: #0C7935;
+    fill-opacity: 0.2;
+    width: 2;
+}
+
+area|z17-[highway=footway]:closed{
+    fill-color: #29ED00;
+    fill-opacity: 0.2;
+    width: 2;
+}
+
+area|z17-[highway=cycleway]:closed{
+    fill-color: #9502CF;
+    fill-opacity: 0.12;
+    width: 2;
+}
+
+area|z17-[amenity=parking]{
+    fill-color: #91A210;
+    fill-opacity: 0.2;
+    width: 2;
+}
+
+area|z17-[amenity=taxi]{
+    fill-color: #7CA311;
+    fill-opacity: 0.15;
+    width: 2;
+}
