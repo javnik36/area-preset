@@ -44,6 +44,11 @@ area|z17-[highway=cycleway]:closed{
     width: 2;
 }
 
+area|z17-[traffic_calming=island]{
+    fill-image: "stripes.png";
+    fill-opacity: 0.2;
+}
+
 area|z17-[amenity=parking]{
     fill-color: #91A210;
     fill-opacity: 0.2;
@@ -54,4 +59,10 @@ area|z17-[amenity=taxi]{
     fill-color: #7CA311;
     fill-opacity: 0.15;
     width: 2;
+}
+
+
+node[highway=stop], node[crossing:end=yes]{
+    symbol-shape: circle;
+    symbol-size: +5;
 }
