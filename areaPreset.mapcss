@@ -8,80 +8,59 @@ meta {
     min-josm-version: 6789;   /* the minimum JOSM version where this style works */
 }
 /*legacy*/
-area|z17-[area:highway=yes], area|z17-[!highway="~/.way/"]{
-    fill-color: #111219;
-    fill-opacity: 0.2;
-    width: 2;
-}
-
-area|z17-[area:highway:crossing=yes]{
-    fill-color: #182971;
-    fill-opacity: 0.2;
-    width: 2;
-}
-
-area|z17-[area:highway:prohibited=yes]{
-    fill-color: #A62B11;
-    fill-opacity: 0.2;
-    width: 1.5;
-}
-
-area|z17-[area:highway:permissive=yes]{
-    fill-color: #0C7935;
-    fill-opacity: 0.2;
-    width: 2;
-}
-
-/*newest_one*/
 area|z17-[area:highway=yes]{
     fill-color: #111219;
     fill-opacity: 0.2;
     width: 2;
 }
 
-area|z17-[area:highway=crossing]{
+area|z17-[area:highway:crossing=yes], area|z17-[area:highway=crossing]{
     fill-color: #182971;
     fill-opacity: 0.2;
     width: 2;
 }
 
-area|z17-[area:highway=prohibited]{
+area|z17-[area:highway:prohibited=yes], area|z17-[area:highway=prohibited]{
     fill-color: #A62B11;
     fill-opacity: 0.2;
     width: 1.5;
 }
 
-area|z17-[area:highway=permissive]{
+area|z17-[area:highway:permissive=yes], area|z17-[area:highway=permissive]{
     fill-color: #0C7935;
     fill-opacity: 0.2;
     width: 2;
 }
 
-area|z17-[highway=footway][area=yes]:closed, area|z17-[area:sidewalk=yes], area|z17-[area:highway=footway]:closed{
+/*area|z17-[area:highway=footway]{
     fill-color: #29ED00;
     fill-opacity: 0.2;
     width: 2;
+    text-position: center;
+    font-size: 25;
+}*/
+
+area|z17-[area:highway=footway]:closed{
+    fill-color: #29ED00;
+    fill-opacity: 0.2;
+    width: 2;
+}
+
+area|z17-[area:highway=cycleway]:closed{
+    fill-color: #9502CF;
+    fill-opacity: 0.12;
+    width: 2;
+}
+
+area|z17-[area:highway=traffic_island]{
+    fill-image: "stripes.png";
+    fill-opacity: 0.2;
 }
 
 area|z17-[area:highway=traffic_island][foot=yes]{
     fill-color: #A9F5F2;
     fill-opacity: 0.2;
     color: #29ED00;
-    width: 2;
-}
-/*
-area|z17-[highway=footway][area=yes][footway=traffic_island]:closed{
-    fill-opacity: 0.2; //costu zmienic
-    width: 2;
-}
-*/
-area|z17-[highway=steps][area=yes]:closed{
-    fill-color: orange; //dobrac kolor
-}
-
-area|z17-[highway=cycleway][area=yes]:closed, area|z17-[area:highway=cycleway]:closed{
-    fill-color: #9502CF;
-    fill-opacity: 0.12;
     width: 2;
 }
 
@@ -91,15 +70,9 @@ area|z17-[area:highway=traffic_island][bicycle=yes]{
     width: 2;
 }
 
-area|z17-[traffic_calming=island], area|z17-[area:highway=traffic_island]{
-    fill-image: "stripes.png";
-    fill-opacity: 0.2;
-}
-
-area|z17-[amenity=parking]{
-    fill-color: #91A210;
-    fill-opacity: 0.2;
-    width: 2;
+area|z17-[highway=steps][area=yes]{
+    fill-color: orange;
+    color: orange;
 }
 
 area|z17-[amenity=taxi]{
@@ -107,7 +80,6 @@ area|z17-[amenity=taxi]{
     fill-opacity: 0.15;
     width: 2;
 }
-
 
 node|z17-[highway=stop], node|z17-[crossing:end=yes]{
     symbol-shape: circle;
