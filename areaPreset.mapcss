@@ -7,8 +7,8 @@ meta {
     /*link: "http://...";*/       /* URL to the web page of the style */
     min-josm-version: 6789;   /* the minimum JOSM version where this style works */
 }
-
-area|z17-[area:highway], area|z17-[!highway="~/.way/"]{
+/*legacy*/
+area|z17-[area:highway=yes], area|z17-[!highway="~/.way/"]{
     fill-color: #111219;
     fill-opacity: 0.2;
     width: 2;
@@ -32,23 +32,66 @@ area|z17-[area:highway:permissive=yes]{
     width: 2;
 }
 
-area|z17-[highway=footway][area=yes]:closed, area|z17-[area:sidewalk=yes]{
+/*newest_one*/
+area|z17-[area:highway=yes]{
+    fill-color: #111219;
+    fill-opacity: 0.2;
+    width: 2;
+}
+
+area|z17-[area:highway=crossing]{
+    fill-color: #182971;
+    fill-opacity: 0.2;
+    width: 2;
+}
+
+area|z17-[area:highway=prohibited]{
+    fill-color: #A62B11;
+    fill-opacity: 0.2;
+    width: 1.5;
+}
+
+area|z17-[area:highway=permissive]{
+    fill-color: #0C7935;
+    fill-opacity: 0.2;
+    width: 2;
+}
+
+area|z17-[highway=footway][area=yes]:closed, area|z17-[area:sidewalk=yes], area|z17-[area:highway=footway]:closed{
     fill-color: #29ED00;
     fill-opacity: 0.2;
     width: 2;
 }
 
+area|z17-[area:highway=traffic_island][foot=yes]{
+    fill-color: #A9F5F2;
+    fill-opacity: 0.2;
+    color: #29ED00;
+    width: 2;
+}
+/*
+area|z17-[highway=footway][area=yes][footway=traffic_island]:closed{
+    fill-opacity: 0.2; //costu zmienic
+    width: 2;
+}
+*/
 area|z17-[highway=steps][area=yes]:closed{
     fill-color: orange; //dobrac kolor
 }
 
-area|z17-[highway=cycleway][area=yes]:closed{
+area|z17-[highway=cycleway][area=yes]:closed, area|z17-[area:highway=cycleway]:closed{
     fill-color: #9502CF;
     fill-opacity: 0.12;
     width: 2;
 }
 
-area|z17-[traffic_calming=island]{
+area|z17-[area:highway=traffic_island][bicycle=yes]{
+    fill-opacity: 0.2;
+    fill-color: #9502CF;
+    width: 2;
+}
+
+area|z17-[traffic_calming=island], area|z17-[area:highway=traffic_island]{
     fill-image: "stripes.png";
     fill-opacity: 0.2;
 }
