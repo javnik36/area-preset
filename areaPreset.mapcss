@@ -1,7 +1,7 @@
 meta {
     title: "area:highway style";   /* title shown in the menu */
     icon: "images/logo.png";  /* small icon shown in the menu next to the title */
-    version: "1.0";           /* the version of the style */
+    version: "0.1";           /* the version of the style */
     description: "...";       /* one or two sentences of describing the style */
     author: "Javnik";            /* the author(s) of the style */
     /*link: "http://...";*/       /* URL to the web page of the style */
@@ -50,13 +50,13 @@ area|z17-[area:highway=tertiary], area|z17-[area:highway=tertiary_link]{
     width: 2;
 }
 
-area|z17-[area:highway=service]{
+area|z17-[area:highway=service]:closed{
     fill-color: #809bc0;
     fill-opacity: 0.2;
     width: 2;
 }
 
-area|z17-[area:highway:crossing=yes], area|z17-[area:highway=crossing]{
+area|z17-[area:highway:crossing=yes], area|z17-[area:highway=crossing], area|z17-[junction]:closed, area|z17-[area:highway=junction]{
     fill-color: #182971;
     fill-opacity: 0.2;
     width: 2;
@@ -72,6 +72,11 @@ area|z17-[area:highway:permissive=yes], area|z17-[area:highway=permissive]{
     fill-color: #0C7935;
     fill-opacity: 0.2;
     width: 2;
+}
+
+area|z17-[area:highway=emergency]{
+    fill-image: "emerg.png";
+    fill-opacity: 0.12;
 }
 
 /*area|z17-[area:highway=footway]{
@@ -132,4 +137,17 @@ area|z17-[amenity=taxi]{
 node|z17-[highway=stop], node|z17-[crossing:end=yes]{
     symbol-shape: circle;
     symbol-size: +5;
+}
+
+way|z22-[footway=crossing]{
+    /*repeat-image: "stripe.png";
+    repeat-image-width: 173;
+    repeat-image-height: 173;
+    repeat-image-align: center;
+    casing-opacity: 0.7;*/
+    opacity: 0.4;
+    color: red;
+    width: has_tag_key(width) ? tag(width)*30 : 5;
+    text: has_tag_key(width) ? "" : "Width!";
+    font-size: 18;
 }
